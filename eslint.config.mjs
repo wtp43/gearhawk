@@ -7,51 +7,53 @@ import tailwind from 'eslint-plugin-tailwindcss'
 import testingLibrary from 'eslint-plugin-testing-library'
 
 export default antfu(
-    {
-        react: true,
-        typescript: true,
 
-        lessOpinionated: true,
-        isInEditor: false,
+  {
+    react: true,
+    typescript: true,
 
-        stylistic: {
-            indent: 4,
-            quotes: 'single',
-        },
-        formatters: {
-            css: true,
-        },
+    lessOpinionated: true,
+    isInEditor: false,
 
-        ignores: ['migrations/**/*', 'next-env.d.ts'],
+    stylistic: {
+      quotes: 'single',
     },
-    ...tailwind.configs['flat/recommended'],
-    jsxA11y.flatConfigs.recommended,
-    {
-        plugins: {
-            '@next/next': nextPlugin,
-        },
-        rules: {
-            // ...nextPlugin.configs.recommended.rules,
-            ...nextPlugin.configs['core-web-vitals'].rules,
-        },
+    formatters: {
+      css: true,
     },
-    {
-        files: ['**/*.test.ts?(x)'],
-        ...testingLibrary.configs['flat/react'],
-        ...jestDom.configs['flat/recommended'],
+
+    ignores: ['migrations/**/*', 'next-env.d.ts'],
+  },
+
+  ...tailwind.configs['flat/recommended'],
+  jsxA11y.flatConfigs.recommended,
+  {
+    plugins: {
+      '@next/next': nextPlugin,
     },
-    {
-        files: ['**/*.spec.ts', '**/*.e2e.ts'],
-        ...playwright.configs['flat/recommended'],
+    rules: {
+      ...nextPlugin.configs.recommended.rules,
+      ...nextPlugin.configs['core-web-vitals'].rules,
     },
-    {
-        rules: {
-            'antfu/no-top-level-await': 'off', // Allow top-level await
-            'style/brace-style': ['error', '1tbs'], // Use the default brace style
-            'ts/consistent-type-definitions': ['error', 'type'], // Use `type` instead of `interface`
-            'node/prefer-global/process': 'off', // Allow using `process.env`
-            'test/padding-around-all': 'error', // Add padding in test files
-            'test/prefer-lowercase-title': 'off', // Allow using uppercase titles in test titles
-        },
+  },
+  {
+    files: ['**/*.test.ts?(x)'],
+    ...testingLibrary.configs['flat/react'],
+    ...jestDom.configs['flat/recommended'],
+  },
+  {
+    files: ['**/*.spec.ts', '**/*.e2e.ts'],
+    ...playwright.configs['flat/recommended'],
+  },
+  {
+    rules: {
+      'antfu/no-top-level-await': 'off', // Allow top-level await
+      'style/brace-style': ['error', '1tbs'], // Use the default brace style
+      'ts/consistent-type-definitions': ['error', 'type'], // Use `type` instead of `interface`
+      'node/prefer-global/process': 'off', // Allow using `process.env`
+      'test/padding-around-all': 'error', // Add padding in test files
+      'test/prefer-lowercase-title': 'off', // Allow using uppercase titles in test titles
+      'next/next/no-html-link-for-pages': 'off',
     },
+  },
 )

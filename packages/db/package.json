@@ -1,0 +1,17 @@
+{
+  "name": "@gearhawk/db",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "db:gen": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
+    "drizzle-orm": "^0.39.2"
+  },
+  "devDependencies": {
+    "@opennextjs/cloudflare": "^0.4.7"
+  },
+  "overrides": {}
+}
