@@ -5,9 +5,7 @@
   "scripts": {
     "dapp": "pnpm -F app dev",
     "papp": "pnpm -F app preview",
-    "lint:fix": "eslint . --fix",
-    "db:gen": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate"
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "pnpm": "^10.2.1"

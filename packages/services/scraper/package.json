@@ -1,18 +1,19 @@
 {
-  "name": "@gearhawk/db",
+  "name": "@gearhawk/scraper",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "db:gen": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate"
+    "run": ""
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.10.4",
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "dotenv": "^16.4.7",
     "drizzle-orm": "^0.39.2",
-    "dotenv": "^16.4.7"
+    "run-queue": "^2.0.1"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "^0.4.7",
     "drizzle-kit": "^0.30.4"
   },
   "overrides": {}
